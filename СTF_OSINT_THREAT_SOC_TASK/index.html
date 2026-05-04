@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSINT — Наследие TitorJohn</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+        }
+        h1 {
+            color: #58a6ff;
+            border-bottom: 1px solid #21262d;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #8b949e;
+            font-size: 1.2em;
+        }
+        .highlight {
+            color: #ff7b72;
+            font-weight: bold;
+        }
+        .artifact {
+            background-color: #161b22;
+            padding: 15px;
+            border-left: 4px solid #d2a8ff;
+            word-break: break-all;
+            margin: 20px 0;
+            font-size: 1.1em;
+        }
+        .quote {
+            background-color: #1c2128;
+            padding: 15px;
+            border-left: 4px solid #3fb950;
+            font-style: italic;
+            margin: 20px 0;
+        }
+        .hint {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #6e7681;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>[TICKET-8812] OSINT: Расследование обрывается</h1>
+    <h2>Отдел: SOC NZTmedicine | Статус: КРИТИЧЕСКИЙ</h2>
+
+    <p>На прошлой неделе системы мониторинга <b>NZTmedicine</b> зафиксировали подозрительную сетевую активность на одном из серверов разработки. За расследование инцидента взялся наш ведущий аналитик под псевдонимом <span class="highlight">TitorJohn</span>.</p>
+
+    <p>Он известен своим нестандартным подходом: вместо внутренних закрытых систем он часто использует публичные платформы Threat Intelligence для визуализации графов атак и поиска связей.</p>
+
+    <p>Сегодня утром TitorJohn перестал выходить на связь. Инцидент так и не был закрыт, но в нашем внутреннем чате он успел оставить одно сообщение и стартовый артефакт дроппера:</p>
+
+    <div class="quote">
+        «Ребята, я распутал этот клубок. Хакеры очень хитрые — они прогнали трафик через Cloudflare и замаскировали свой реальный C2-сервер под скучную фоновую телеметрию ОС. Но я нашел истинный IP. Я построил визуальный граф расследования на всем известной публичной платформе. Финальный вердикт и данные для отчета я оставил в комментариях к узлу реального командного центра. Увидимся в понедельник.»
+    </div>
+
+    <p><b>Задача:</b> Найти граф TitorJohn'а по стартовому артефакту, отсеять информационный шум, вычислить истинный C2-сервер (маскирующийся под системный сервис) и достать оттуда флаг.</p>
+
+    <div class="artifact">
+        <b>Стартовый артефакт (SHA-256):</b><br>
+        [6022be5e9ae7fb483c3542e11518d34bcb0c7e14b8a70d92a484a3feee9276bb]
+    </div>
+
+    <p class="hint">
+        // Подсказка: Ищи там, где вирусы проходят проверку. Тебе нужна вкладка с мнением сообщества или визуальными связями. Обращай внимание на комментарии узлов.
+    </p>
+
+</body>
+</html>
